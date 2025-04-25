@@ -1,0 +1,22 @@
+<html>
+<body>
+<h3>Edit Product</h3>
+
+<form method="post">
+    <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input name="name" type="text" class="form-control" value="{{ product.name }}">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Category</label>
+        <input name="category" type="text" class="form-control" value="{{ product.category }}">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Buyer</label>
+        <input name="buyer" type="text" class="form-control" value="{{ product.buyer }}">
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button>
+    <a href="{{ url_for('index') }}" class="btn btn-secondary">Cancel</a>
+</form>
+</body>
+</html>

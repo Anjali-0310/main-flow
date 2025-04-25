@@ -1,0 +1,46 @@
+<html>
+<body>
+<h2>Products/Buyers</h2>
+
+<form class="row g-3" method="get">
+    <div class="col-md-4">
+        <input type="text" class="form-control" name="search" placeholder="Search by name or buyer">
+    </div>
+    <div class="col-md-3">
+        <select class="form-select" name="category">
+            <option value="All">All Categories</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Clothing">Clothing</option>
+        </select>
+    </div>
+    <div class="col-md-2">
+        <button class="btn btn-primary" type="submit">Search</button>
+    </div>
+</form>
+
+<table class="table table-bordered mt-4">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Buyer</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for product in products %}
+        <tr>
+            <td>{{ product.name }}</td>
+            <td>{{ product.category }}</td>
+            <td>{{ product.buyer }}</td>
+            <td>
+                <a href="{{ url_for('edit', id=product.id) }}" class="btn btn-sm btn-warning">Edit</a>
+                <a href="{{ url_for('delete', id=product.id) }}" class="btn btn-sm btn-danger">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+</body>
+    </html>
